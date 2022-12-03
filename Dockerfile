@@ -6,5 +6,4 @@ RUN npm install -g npm@8.19.3
 RUN npm run
 
 FROM nginx:1.22.1-alpine
-COPY src/nginx/etc/conf.d/default.conf /etc/nginx/conf/defult.conf
 COPY --from=builder app/dist/employee-front-end usr/share/nginx/html
