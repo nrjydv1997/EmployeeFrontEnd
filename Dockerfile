@@ -6,7 +6,7 @@ COPY . .
 RUN npm run build
 
 FROM nginx:1.22.1-alpine
-WORKDIR /usr/share/bginx/html
+WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
-COPY /from=angularwork /myapp/build .
+COPY /from=angularwork /myapp/ .
 ENTRYPOINT ["nginx","-g","daemon off;"]
